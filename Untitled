@@ -1,0 +1,15 @@
+SELECT admitting_diagnosis_code, count(*) as total_count from finale_patient_data group by admitting_diagnosis_code order by count(*) desc limit 20
+
+
+SELECT F.admitting_diagnosis_code ,M.short_description , count(*) as total_count from finale_patient_data as F, diagnosis_code_mapping as M where F.admitting_diagnosis_code = M.diagnosis_code group by admitting_diagnosis_code order by count(*) desc limit 20
+
+$sql = "SELECT $adcb, $sexb, $ageb FROM `finale_patient_data` WHERE admitting_diagnosis_code LIKE '%".$_POST['adc']."%' AND sex LIKE '%".$_POST['sex']."%' AND age LIKE '%".$_POST['age']."%' GROUP  BY national_provider_id
+ORDER  BY avg_total_charges ASC";
+
+
+$sql = "SELECT $adcb, $sexb, $ageb FROM finale_patient_data as F, diagnosis_code_mapping as D WHERE D.diagnosis_code = F.admitting_diagnosis_code AND D.short_description LIKE '%".$_POST['adc']."%' AND F.sex LIKE '%".$_POST['sex']."%' AND age LIKE '%".$_POST['age']."%' GROUP  BY F.national_provider_id";
+
+
+SELECT F.`national_provider_id`, , F.`age` FROM finale_patient_data as F, diagnosis_code_mapping as D WHERE D.diagnosis_code = F.admitting_diagnosis_code AND D.short_description LIKE 'Pneumonia, organism NOS' AND F.sex LIKE  '1' AND age LIKE '5' GROUP  BY F.national_provider_id
+
+ $sql = "SELECT $adcb, $sexb, $ageb FROM `finale_patient_data` WHERE admitting_diagnosis_code = (SELECT diagnosis_code FROM diagnosis_code_mapping where short_description LIKE '%".$_POST['adc']."%') GROUP BY national_provider_id";
