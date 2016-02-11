@@ -1,4 +1,4 @@
-# DB_PROJECT2_TEAM_E
+# Hospital Management System
 
 Problem statement
 
@@ -10,4 +10,6 @@ Average Cost (specific symptoms)
 Average Length of Stay (specific symptoms)
 Hospital mortality (specific symptoms)
 
+
+Technologies used : PHP , MYSQL , JAVASCRIPT, JQUERY , HTML , CSS 
 
